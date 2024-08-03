@@ -1,0 +1,198 @@
+/* src/components/CollectionPage.css */
+
+.collection-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center items vertically */
+  min-height: 100vh; /* Full viewport height */
+  background-color: #F8F8F8;
+  text-align: center; /* Center text inside the elements */
+}
+
+.page-header {
+  width: 100%;
+  padding: 40px 20px 20px; /* Add padding to the top of the page title */
+  background-color: #F8F8F8;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align the title */
+}
+
+.home-link {
+  color: black;
+  font-size: calc(4rem + 2vw); /* Responsive font size for the title */
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .home-link {
+    font-size: calc(3rem + 2vw); /* Adjust size for smaller screens */
+  }
+}
+
+.home-link:hover {
+  text-decoration: underline;
+}
+
+.carousel {
+  width: 100%; /* Full width to align with the page layout */
+  display: flex;
+  justify-content: center; /* Center carousel horizontally */
+  background-color: #F8F8F8; 
+}
+
+.carousel .slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.carousel-item {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative; /* Allows absolute positioning of overlay */
+}
+
+.image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center image horizontally */
+  align-items: center; /* Center image vertically */
+  position: relative; /* Allows positioning of overlay */
+}
+
+.carousel .slide img {
+  max-width: 60vw; /* Adjusts image width to fit within viewport */
+  max-height: 60vh; /* Adjusts image height to fit within viewport */
+  object-fit: contain; /* Keeps aspect ratio and fits image within constraints */
+  border: 1px solid lightgrey; /* Light grey thin border around images */
+  box-shadow: 10px 30px 20px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
+  transition: opacity 0.3s ease; /* Smooth transition for dim effect */
+}
+
+.image-container::before {
+  content: ""; /* Creates an empty overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark gray overlay */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for overlay */
+}
+
+.image-container:hover::before,
+.image-container:focus-within::before {
+  opacity: 1; /* Show overlay on hover or focus */
+}
+
+.image-container:hover img,
+.image-container:focus-within img {
+  opacity: 0.7; /* Dim the image on hover or focus */
+}
+
+.image-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem; /* Adjust font size for the title */
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add shadow for better readability */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for title appearance */
+}
+
+.image-container:hover .image-title,
+.image-container:focus-within .image-title {
+  opacity: 1; /* Show title on hover or focus */
+}
+
+.image-info {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background for readability */
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for info appearance */
+  max-width: calc(100% - 40px); /* Ensure info fits within the image */
+  box-sizing: border-box;
+  overflow: hidden; /* Ensure info doesn't spill out */
+}
+
+.image-container:hover .image-info,
+.image-container:focus-within .image-info {
+  opacity: 1; /* Show info on hover or focus */
+}
+
+/* Hide details at viewports narrower than 423px */
+@media (max-width: 423px) {
+  .image-info {
+    display: none; /* Hide details */
+  }
+}
+
+/* Hide details at viewports narrower than 575px */
+@media (max-width: 575px) {
+  .image-info {
+    display: none; /* Hide details */
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-title {
+    font-size: 1.5rem; /* Reduce title font size */
+    top: 15%; /* Adjust position of the title for smaller screens */
+  }
+
+  .image-info {
+    font-size: 0.875rem; /* Adjust font size for smaller screens */
+    padding: 5px; /* Reduce padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-title {
+    font-size: 1.2rem; /* Further reduce title font size */
+    top: 20%; /* Further adjust position of the title */
+  }
+
+  .image-info {
+    font-size: 0.75rem; /* Further adjust font size for very small screens */
+    padding: 3px; /* Further reduce padding */
+  }
+
+  .image-title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem; /* Adjust font size for the title */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add shadow for better readability */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for title appearance */
+  }
+}
+
+/* Hide the dots and arrows */
+.carousel .control-dots,
+.carousel .control-arrow {
+  display: none;
+}

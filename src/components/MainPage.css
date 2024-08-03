@@ -1,0 +1,57 @@
+/* src/components/MainPage.css */
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  height: 100vh; /* Full viewport height */
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center; /* Center text inside the elements */
+  background: #F8F8F8;
+}
+
+.title {
+  font-size: 6rem; /* Increased the size */
+  margin-bottom: 20px; /* Reduced bottom margin for closer spacing */
+  font-weight: bold;
+  color: #333;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 40px; /* Increased the gap for better spacing */
+}
+
+nav ul li {
+  display: inline; /* Ensure list items are inline */
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 3rem; /* Increased the size */
+  color: #000;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #007BFF;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 4rem; /* Adjusted size for smaller screens */
+  }
+
+  nav ul {
+    flex-direction: column; /* Change to column layout on small screens */
+    gap: 20px;
+  }
+
+  nav ul li a {
+    font-size: 2rem; /* Adjusted size for smaller screens */
+  }
+}
