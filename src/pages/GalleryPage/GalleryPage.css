@@ -1,5 +1,5 @@
-/* src/components/MainPage.css */
-.main-page {
+/* src/components/GalleryPage.css */
+.gallery-page { 
   display: flex;
   flex-direction: column;
   align-items: center; /* Center items horizontally */
@@ -18,12 +18,37 @@
   color: #333;
 }
 
+.title-link {
+  text-decoration: none;
+  color: inherit; /* Inherit the color from the .title class */
+  cursor: pointer; /* Show a pointer to indicate it's clickable */
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.title-link:hover {
+  color: #007BFF; /* Change the color on hover to indicate it's clickable */
+  text-decoration: underline; /* Underline the text on hover */
+}
+
+.subTitle {
+  font-size: 3rem; /* Half the size of the title */
+  font-weight: bold;
+  color: #333;
+  margin: 0 auto; /* Center the subtitle horizontally */
+  display: flex;
+  justify-content: center; /* Center the content inside the subtitle */
+  width: 100%; /* Take up the full width to allow even spacing */
+  text-align: center;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
+  flex-wrap: wrap; /* Allow items to wrap onto the next line */
   gap: 40px; /* Increased the gap for better spacing */
+  justify-content: center; /* Center items horizontally */
 }
 
 nav ul li {
@@ -44,6 +69,10 @@ nav ul li a:hover {
 @media (max-width: 768px) {
   .title {
     font-size: 4rem; /* Adjusted size for smaller screens */
+  }
+
+  .subTitle {
+    font-size: 2rem; /* Adjusted size for smaller screens */
   }
 
   nav ul {

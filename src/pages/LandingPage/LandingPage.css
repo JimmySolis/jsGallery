@@ -1,0 +1,50 @@
+.landing-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #F8F8F8; /* Background color */
+  opacity: 1;
+  transition: opacity 2s ease-out; /* Slow transition for fade-out */
+  position: relative; /* For absolute positioning of buttons */
+}
+
+.landing-page.fade-in {
+  opacity: 1;
+}
+
+.landing-page .logo {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 3s ease-in-out; /* Slower fade-in effect */
+}
+
+.landing-page .logo.fade-in {
+  opacity: 1;
+}
+
+.landing-page .navigation-buttons {
+  position: absolute; /* Positioning relative to the parent */
+  right: 10%; /* Distance from the right edge */
+  top: 50%; /* Vertically centered */
+  transform: translateY(-50%); /* Center vertically */
+  display: flex; /* Display buttons in a row */
+  gap: 15px; /* Space between buttons */
+  opacity: 0;
+  transition: opacity 3s ease-in-out; /* Slower fade-in effect */
+}
+
+.landing-page .navigation-buttons.fade-in {
+  opacity: 1;
+}
+
+.landing-page .navigation-buttons button {
+  padding: 15px 30px; /* Larger button size */
+  font-size: 18px; /* Larger font size */
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: none; /* Remove background styling */
+  color: inherit; /* Inherit text color */
+}

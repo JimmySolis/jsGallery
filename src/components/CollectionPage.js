@@ -1,35 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import './CollectionPage.css'; // Import the CSS file
-
-// Importing images
-import romeWebp from '../assets/images/foundation/rome.webp';
-import romePng from '../assets/images/foundation/rome.png';
-import citationWebp from '../assets/images/foundation/citation.webp';
-import citationPng from '../assets/images/foundation/citation.png';
-import galaxyWebp from '../assets/images/foundation/galaxy.webp';
-import galaxytPng from '../assets/images/foundation/galaxy.png';
-import paranoiaWebp from '../assets/images/foundation/paranoia.webp';
-import paranoiaPng from '../assets/images/foundation/paranoia.png';
-
-import elegantWebp from '../assets/images/blackout/elegant.webp';
-import elegantPng from '../assets/images/blackout/elegant.png';
-import meditationWebp from '../assets/images/blackout/meditation.webp';
-import meditationPng from '../assets/images/blackout/meditation.png';
-import salvadorWebp from '../assets/images/blackout/salvador.webp';
-import salvadorPng from '../assets/images/blackout/salvador.png';
-import tauroWebp from '../assets/images/blackout/tauro.webp';
-import tauroPng from '../assets/images/blackout/tauro.png';
-import gloriaWebp from '../assets/images/blackout/gloria.webp';
-import gloriaPng from '../assets/images/blackout/gloria.png';
-import nightBubbléWebp from '../assets/images/blackout/nightBubblé.webp';
-import nightBubbléPng from '../assets/images/blackout/nightBubblé.png';
-import romeoWebp from '../assets/images/blackout/romeo.webp';
-import romeoPng from '../assets/images/blackout/romeo.png';
-import cochinitaWebp from '../assets/images/blackout/cochinitaPiBiL.webp';
-import cochinitaPng from '../assets/images/blackout/cochinitaPiBiL.png';
+import { storage } from '../firebase/firebase'; // Import the Firebase storage instance
+import { ref, getDownloadURL } from "firebase/storage"; // Import ref and getDownloadURL
 
 // Helper function to get the file name with the first letter capitalized
 const getFileName = (filePath) => {
@@ -51,60 +26,103 @@ const paintingDetails = {
   gloria: { size: "4x5ft", medium: "Acrylic on Canvas" },
   nightbubblé: { size: "4x5ft", medium: "Acrylic on Canvas" },
   romeo: { size: "4x5ft", medium: "Acrylic on Canvas" },
-  cochinitapibil: { size: "4x5ft", medium: "Acrylic on Canvas" }
+  cochinita: { size: "4x5ft", medium: "Acrylic on Canvas" }
 };
 
 const collections = {
   foundation: [
-    { webp: romeWebp, png: romePng },
-    { webp: citationWebp, png: citationPng },
-    { webp: galaxyWebp, png: galaxytPng },
-    { webp: paranoiaWebp, png: paranoiaPng }
+    { webp: 'galleryPhotos/foundation/rome.webp', png: 'galleryPhotos/foundation/rome.png' },
+    { webp: 'galleryPhotos/foundation/citation.webp', png: 'galleryPhotos/foundation/citation.png' },
+    { webp: 'galleryPhotos/foundation/galaxy.webp', png: 'galleryPhotos/foundation/galaxy.png' },
+    { webp: 'galleryPhotos/foundation/paranoia.webp', png: 'galleryPhotos/foundation/paranoia.png' }
   ],
   blackout: [
-    { webp: romeoWebp, png: romeoPng },
-    { webp: elegantWebp, png: elegantPng },
-    { webp: nightBubbléWebp, png: nightBubbléPng },
-    { webp: meditationWebp, png: meditationPng },
-    { webp: salvadorWebp, png: salvadorPng },
-    { webp: tauroWebp, png: tauroPng },
-    { webp: gloriaWebp, png: gloriaPng },
-    { webp: cochinitaWebp, png: cochinitaPng }
+    { webp: 'galleryPhotos/blackout/romeo.webp', png: 'galleryPhotos/blackout/romeo.png' },
+    { webp: 'galleryPhotos/blackout/elegant.webp', png: 'galleryPhotos/blackout/elegant.png' },
+    { webp: 'galleryPhotos/blackout/night-Bubblé.webp', png: 'galleryPhotos/blackout/night-Bubblé.png' },
+    { webp: 'galleryPhotos/blackout/meditation.webp', png: 'galleryPhotos/blackout/meditation.png' },
+    { webp: 'galleryPhotos/blackout/salvador.webp', png: 'galleryPhotos/blackout/salvador.png' },
+    { webp: 'galleryPhotos/blackout/tauro.webp', png: 'galleryPhotos/blackout/tauro.png'},
+    { webp: 'galleryPhotos/blackout/gloria.webp', png: 'galleryPhotos/blackout/gloria.png' },
+    { webp: 'galleryPhotos/blackout/cochinita.webp', png: 'galleryPhotos/blackout/cochinita.png' }
   ],
   'not-released': [],
 };
 
 function CollectionPage() {
   const { name } = useParams();
-  const paintings = collections[name] || [];
+  const [paintings, setPaintings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const collectionImages = collections[name] || [];
+
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const urls = await Promise.all(collectionImages.map(async (image) => {
+          const imageRef = ref(storage, image.webp); // Create a reference to the file
+          const url = await getDownloadURL(imageRef); // Fetch the download URL
+
+          // Preload the image to avoid flickering
+          const img = new Image();
+          img.src = url;
+
+          return url;
+        }));
+
+        setPaintings(urls);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching images from Firebase:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchImages();
+  }, [name, collectionImages]);
 
   return (
     <div className="collection-page">
       <header className="page-header">
-        <Link to="/" className="home-link">Jimmy Solis</Link>
+        <Link to="/gallery" className="home-link">Jimmy Solis</Link>
       </header>
-      <Carousel swipeable emulateTouch showThumbs={false} showStatus={false} showArrows={false}>
-        {paintings.map((painting, index) => {
-          // Dynamically get the title from the image file name
-          const title = getFileName(painting.webp);
-          const details = paintingDetails[title.toLowerCase()] || { size: 'Unknown', medium: 'Unknown' };
+      <Carousel
+        swipeable
+        emulateTouch
+        showThumbs={false}
+        showStatus={false}
+        showArrows={false}
+        renderIndicator={(onClickHandler, isSelected, index) => (
+          <li
+            style={{ background: isSelected ? '#000' : '#fff' }}
+            onClick={onClickHandler}
+            key={index}
+          />
+        )}
+      >
+        {loading ? (
+          <div className="loading-placeholder">Loading images...</div>
+        ) : (
+          paintings.map((url, index) => {
+            const title = getFileName(collectionImages[index].webp);
+            const details = paintingDetails[title.toLowerCase()] || { size: 'Unknown', medium: 'Unknown' };
 
-          return (
-            <div key={index} className="carousel-item">
-              <div className="image-container">
-                <picture>
-                  <source srcSet={painting.webp} type="image/webp" />
-                  <img src={painting.png} alt={title} loading="lazy" />
-                </picture>
-                <div className="image-title">{title}</div>
-                <div className="image-info">
-                  <p><strong>Size:</strong> {details.size}</p>
-                  <p><strong>Medium:</strong> {details.medium}</p>
+            return (
+              <div key={index} className="carousel-item">
+                <div className="image-container">
+                  <picture>
+                    <source srcSet={url.replace('.png', '.webp')} type="image/webp" />
+                    <img src={url} alt={title} loading="lazy" />
+                  </picture>
+                  <div className="image-title">{title}</div>
+                  <div className="image-info">
+                    <p><strong>Size:</strong> {details.size}</p>
+                    <p><strong>Medium:</strong> {details.medium}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })
+        )}
       </Carousel>
     </div>
   );

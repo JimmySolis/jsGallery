@@ -1,11 +1,16 @@
 // src/components/MainPage.js
 import { Link } from 'react-router-dom';
-import './MainPage.css';
+import './GalleryPage.css';
 
-function MainPage() {
+function GalleryPage() {
   return (
-    <div className="main-page">
-      <h1 className="title">Jimmy Solis</h1>
+    <div className="gallery-page">
+      <h1 className="title">
+        <Link to="/" className="title-link">
+          Jimmy Solis
+        </Link>
+      </h1>
+      <h1 className="subTitle">Collections</h1>
       <nav>
         <ul>
           <li><Link to="/collection/foundation">Foundation</Link></li>
@@ -17,4 +22,4 @@ function MainPage() {
   );
 }
 
-export default MainPage;
+export default GalleryPage;

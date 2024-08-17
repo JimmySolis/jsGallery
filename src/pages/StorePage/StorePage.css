@@ -1,0 +1,45 @@
+/* src/pages/StorePage.css */
+.store-page {
+    text-align: center;
+  }
+  
+  .store-header {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust based on your banner height */
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+  }
+  
+  .banner-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .store-title {
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+  
+  .products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .product-card {
+    display: block;
+    width: 150px; /* Adjust based on your product card size */
+    height: auto;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
