@@ -1,45 +1,102 @@
-/* src/pages/StorePage.css */
+/* StorePage.css */
+
+/* Ensure unique class names for the store page */
 .store-page {
-    text-align: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animation for sliding in the home button */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
   }
-  
-  .store-header {
-    position: relative;
-    width: 100%;
-    height: 300px; /* Adjust based on your banner height */
-    overflow: hidden;
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center;     /* Center vertically */
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
-  
-  .banner-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  .store-title {
-    font-size: 2rem;
-    margin: 20px 0;
-  }
-  
+}
+
+/* Home button styles */
+.home-button {
+  position: fixed;
+  top: 320px; /* Position it just below the banner */
+  left: 20px;
+  width: 75px; /* Reduced size */
+  height: 75px; /* Reduced size */
+  cursor: pointer;
+  z-index: 999;
+  animation: slideInFromLeft 1s ease-out forwards; /* Slide in animation */
+}
+
+/* Home button image size adjustment */
+.home-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Ensure the rest of the content is initially hidden */
+.store-title,
+.products-grid {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out 1s; /* Fade in after the home button animation */
+}
+
+/* Fade-in class to be applied after animation completes */
+.store-title.fade-in,
+.products-grid.fade-in {
+  opacity: 1;
+}
+
+.store-header {
+  position: relative;
+  width: 100%;
+  height: 300px; 
+  overflow: hidden;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  z-index: 1;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  width: 100%;
+}
+
+.product-card {
+  width: 100%;
+  max-width: 500px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
   .products-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    grid-template-columns: 1fr;
   }
-  
+
   .product-card {
-    display: block;
-    width: 150px; /* Adjust based on your product card size */
-    height: auto;
+    max-width: 100%;
   }
-  
+
   .product-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 40vh;
   }
-  
+}

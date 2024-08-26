@@ -5,6 +5,7 @@ import './LandingPage.css'; // Ensure this path is correct
 
 function LandingPage() {
   const [fadeIn, setFadeIn] = useState(false);
+  const [slideLogoOut, setSlideLogoOut] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,15 +18,20 @@ function LandingPage() {
   }, []);
 
   const handleNavigation = (path) => {
-    navigate(path);
+    if (path === '/store') {
+      setSlideLogoOut(true); // Trigger logo slide-out animation
+      setTimeout(() => navigate(path), 1500); // Delay navigation to allow the animation to complete
+    } else {
+      navigate(path);
+    }
   };
 
   return (
-    <div className={`landing-page ${fadeIn ? 'fade-in' : ''}`}>
+    <div className={`landing-page ${fadeIn ? 'fade-in' : ''} ${slideLogoOut ? 'slide-logo-out' : ''}`}>
       <img
         src={logo}
         alt="Logo"
-        className={`logo ${fadeIn ? 'fade-in' : ''}`}
+        className={`landing-logo ${fadeIn ? 'fade-in' : ''}`}
       />
       <div className={`navigation-buttons ${fadeIn ? 'fade-in' : ''}`}>
         <button onClick={() => handleNavigation('/gallery')}>Gallery</button>

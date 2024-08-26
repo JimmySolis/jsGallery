@@ -4,24 +4,22 @@
   justify-content: center;
   height: 100vh;
   background-color: #F8F8F8; /* Background color */
-  opacity: 1;
-  transition: opacity 2s ease-out; /* Slow transition for fade-out */
   position: relative; /* For absolute positioning of buttons */
+  overflow: hidden; /* Hide overflowing content */
 }
 
-.landing-page.fade-in {
-  opacity: 1;
-}
-
-.landing-page .logo {
-  max-width: 100%;
+.landing-page .landing-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the logo */
+  max-width: 80%; /* Large initial size */
   height: auto;
-  opacity: 0;
-  transition: opacity 3s ease-in-out; /* Slower fade-in effect */
+  transition: transform 1.5s ease-in-out; /* Smooth transition */
 }
 
-.landing-page .logo.fade-in {
-  opacity: 1;
+.landing-page.slide-logo-out .landing-logo {
+  transform: translate(-210%, -50%); /* Move logo out of viewport to the left */
 }
 
 .landing-page .navigation-buttons {
