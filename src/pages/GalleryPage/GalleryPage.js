@@ -1,6 +1,6 @@
 // src/components/MainPage.js
 import { Link } from 'react-router-dom';
-import './GalleryPage.css';
+import './galleryPage.css';
 
 function GalleryPage() {
   return (

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import './CollectionPage.css'; // Import the CSS file
-import { storage } from '../firebase/firebase'; // Import the Firebase storage instance
+import './collectionPage.css'; // Import the CSS file
+import { storage } from '../../firebase/firebase'; // Import the Firebase storage instance
 import { ref, getDownloadURL } from "firebase/storage"; // Import ref and getDownloadURL
 
 // Helper function to get the file name with the first letter capitalized

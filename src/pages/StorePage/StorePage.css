@@ -1,5 +1,3 @@
-/* StorePage.css */
-
 /* Ensure unique class names for the store page */
 .store-page {
   text-align: center;
@@ -19,6 +17,19 @@
   }
 }
 
+/* Animation for floating effect */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Adjust the float height as needed */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 /* Home button styles */
 .home-button {
   position: fixed;
@@ -28,7 +39,7 @@
   height: 75px; /* Reduced size */
   cursor: pointer;
   z-index: 999;
-  animation: slideInFromLeft 1s ease-out forwards; /* Slide in animation */
+  animation: slideInFromLeft 1s ease-out forwards, float 3s ease-in-out 1s infinite; /* Slide in and then float animation */
 }
 
 /* Home button image size adjustment */
@@ -68,28 +79,38 @@
   object-fit: cover;
 }
 
+/* Products grid with five items per row */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(5, 1fr); /* Four items per row */
+  gap: 20px; /* Increased gap for more space */
+  padding: 20px; /* Added padding */
   justify-items: center;
   width: 100%;
 }
 
 .product-card {
   width: 100%;
-  max-width: 500px;
+  max-width: 500px; /* Increased size for larger images */
 }
 
 .product-card img {
   width: 100%;
   height: auto;
   object-fit: cover;
+  padding: 10px; /* Added padding around images */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three items per row on medium screens */
+  }
 }
 
 @media (max-width: 768px) {
   .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* One item per row on small screens */
   }
 
   .product-card {
@@ -97,6 +118,16 @@
   }
 
   .product-card img {
-    height: 40vh;
+    height: auto; /* Adjust height to maintain aspect ratio */
+    padding: 0;
   }
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 2rem;
+  color: #333;
 }

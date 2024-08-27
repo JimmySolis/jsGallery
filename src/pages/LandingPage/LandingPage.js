@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo/logo.PNG'; // Ensure this path is correct
-import './LandingPage.css'; // Ensure this path is correct
+import './landingPage.css'; // Ensure this path is correct
 
 function LandingPage() {
   const [fadeIn, setFadeIn] = useState(false);
