@@ -1,40 +1,17 @@
 {
   "files": {
-    "main.css": "/jsGallery/static/css/main.d0c33823.css",
-    "main.js": "/jsGallery/static/js/main.a00bf670.js",
-    "static/js/453.25d9eb85.chunk.js": "/jsGallery/static/js/453.25d9eb85.chunk.js",
-    "static/media/meditation.png": "/jsGallery/static/media/meditation.80d1323b97a30bb8cdfe.png",
-    "static/media/gloria.png": "/jsGallery/static/media/gloria.e57ad920cb8e71579388.png",
-    "static/media/galaxy.png": "/jsGallery/static/media/galaxy.aeccc99d71fcfe7d39af.png",
-    "static/media/citation.png": "/jsGallery/static/media/citation.dcb39ff450e148532cfc.png",
-    "static/media/tauro.png": "/jsGallery/static/media/tauro.274ea914617312013caf.png",
-    "static/media/rome.png": "/jsGallery/static/media/rome.7c707dfb93dd300fcf27.png",
-    "static/media/elegant.png": "/jsGallery/static/media/elegant.81410f55323041637be6.png",
-    "static/media/salvador.png": "/jsGallery/static/media/salvador.5f6625876b0e783eea29.png",
-    "static/media/romeo.png": "/jsGallery/static/media/romeo.ed738c33b533345222e5.png",
-    "static/media/cochinitaPiBiL.png": "/jsGallery/static/media/cochinitaPiBiL.34636bab478417aadda4.png",
-    "static/media/nightBubblé.png": "/jsGallery/static/media/nightBubblé.c7be278f276096cc4998.png",
-    "static/media/romeo.webp": "/jsGallery/static/media/romeo.9f51fc987587986dc493.webp",
-    "static/media/cochinitaPiBiL.webp": "/jsGallery/static/media/cochinitaPiBiL.7bd6915ceab65f1f338d.webp",
-    "static/media/nightBubblé.webp": "/jsGallery/static/media/nightBubblé.ea4b766d8dbe540f1e19.webp",
-    "static/media/paranoia.png": "/jsGallery/static/media/paranoia.a0e59dfc5873dd2cb0bd.png",
-    "static/media/gloria.webp": "/jsGallery/static/media/gloria.07303a27a51d9c0d7947.webp",
-    "static/media/meditation.webp": "/jsGallery/static/media/meditation.ed8ab7cf3be17d7d3887.webp",
-    "static/media/galaxy.webp": "/jsGallery/static/media/galaxy.e0b8ec99db1c874e4933.webp",
-    "static/media/citation.webp": "/jsGallery/static/media/citation.437bbade873a48c4665a.webp",
-    "static/media/paranoia.webp": "/jsGallery/static/media/paranoia.4c1e0668711e3a74a994.webp",
-    "static/media/rome.webp": "/jsGallery/static/media/rome.92050fe01ac3f8720ec9.webp",
-    "static/media/elegant.webp": "/jsGallery/static/media/elegant.de02fbd2fe9ad5f79a66.webp",
-    "static/media/salvador.webp": "/jsGallery/static/media/salvador.3971cec4de237bd6a90e.webp",
-    "static/media/tauro.webp": "/jsGallery/static/media/tauro.d860d2a2a95663440e0a.webp",
+    "main.css": "/jsGallery/static/css/main.1b595bfc.css",
+    "main.js": "/jsGallery/static/js/main.17de09d7.js",
+    "static/js/453.834e0a5f.chunk.js": "/jsGallery/static/js/453.834e0a5f.chunk.js",
+    "static/media/skull.PNG": "/jsGallery/static/media/skull.ee10a8190f9ab1950aae.PNG",
     "static/media/logo.PNG": "/jsGallery/static/media/logo.afa0e80c7ad5bdf7b7c9.PNG",
     "index.html": "/jsGallery/index.html",
-    "main.d0c33823.css.map": "/jsGallery/static/css/main.d0c33823.css.map",
-    "main.a00bf670.js.map": "/jsGallery/static/js/main.a00bf670.js.map",
-    "453.25d9eb85.chunk.js.map": "/jsGallery/static/js/453.25d9eb85.chunk.js.map"
+    "main.1b595bfc.css.map": "/jsGallery/static/css/main.1b595bfc.css.map",
+    "main.17de09d7.js.map": "/jsGallery/static/js/main.17de09d7.js.map",
+    "453.834e0a5f.chunk.js.map": "/jsGallery/static/js/453.834e0a5f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d0c33823.css",
-    "static/js/main.a00bf670.js"
+    "static/css/main.1b595bfc.css",
+    "static/js/main.17de09d7.js"
   ]
 }
