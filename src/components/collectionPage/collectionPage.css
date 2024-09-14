@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'ArtshowAltThin';
+  src: url('../../fonts/artshow-alt-thin.woff2') format('woff2'),
+       url('../../fonts/artshow-alt-thin.woff') format('woff'),
+       url('../../fonts/artshow-alt-thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'the-macker-gallery-regular';
+  src: url('../../fonts/the-macker-gallery-regular.woff2') format('woff2'),
+       url('../../fonts/the-macker-gallery-regular.woff') format('woff'),
+       url('../../fonts/the-macker-gallery-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* src/components/CollectionPage.css */
 
 .collection-page {
@@ -25,6 +44,8 @@
   text-decoration: none;
   font-weight: bold;
   margin-bottom: 50px;
+  font-family: 'the-macker-gallery-regular', sans-serif;
+
 }
 
 @media (max-width: 768px) {
@@ -132,6 +153,7 @@
   max-width: calc(100% - 40px); /* Ensure info fits within the image */
   box-sizing: border-box;
   overflow: hidden; /* Ensure info doesn't spill out */
+  font-family: 'ArtshowAltThin';
 }
 
 .image-container:hover .image-info,

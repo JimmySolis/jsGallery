@@ -39,12 +39,14 @@ const collections = {
   blackout: [
     { webp: 'galleryPhotos/blackout/romeo.webp', png: 'galleryPhotos/blackout/romeo.png' },
     { webp: 'galleryPhotos/blackout/elegant.webp', png: 'galleryPhotos/blackout/elegant.png' },
-    { webp: 'galleryPhotos/blackout/night-Bubblé.webp', png: 'galleryPhotos/blackout/night-Bubblé.png' },
     { webp: 'galleryPhotos/blackout/meditation.webp', png: 'galleryPhotos/blackout/meditation.png' },
     { webp: 'galleryPhotos/blackout/salvador.webp', png: 'galleryPhotos/blackout/salvador.png' },
     { webp: 'galleryPhotos/blackout/tauro.webp', png: 'galleryPhotos/blackout/tauro.png'},
     { webp: 'galleryPhotos/blackout/gloria.webp', png: 'galleryPhotos/blackout/gloria.png' },
     { webp: 'galleryPhotos/blackout/cochinita.webp', png: 'galleryPhotos/blackout/cochinita.png' }
+  ],
+  blackoutAmPM: [
+    { webp: 'galleryPhotos/blackout/night-Bubblé.webp', png: 'galleryPhotos/blackout/night-Bubblé.png' },
   ],
   'not-released': [],
 };

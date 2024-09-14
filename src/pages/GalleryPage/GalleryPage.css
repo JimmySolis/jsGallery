@@ -1,4 +1,26 @@
 /* src/components/GalleryPage.css */
+
+@font-face {
+  font-family: 'the-macker-gallery-regular';
+  src: url('../../fonts/the-macker-gallery-regular.woff2') format('woff2'),
+       url('../../fonts/the-macker-gallery-regular.woff') format('woff'),
+       url('../../fonts/the-macker-gallery-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Define the custom font */
+@font-face {
+  font-family: 'ArtshowAltThin';
+  src: url('../../fonts/artshow-alt-thin.woff2') format('woff2'),
+       url('../../fonts/artshow-alt-thin.woff') format('woff'),
+       url('../../fonts/artshow-alt-thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General styles */
 .gallery-page { 
   display: flex;
   flex-direction: column;
@@ -16,6 +38,11 @@
   margin-bottom: 20px; /* Reduced bottom margin for closer spacing */
   font-weight: bold;
   color: #333;
+  font-family: 'the-macker-gallery-regular', sans-serif;
+  letter-spacing: 6px;
+  margin-bottom: 25px;
+
+
 }
 
 .title-link {
@@ -39,8 +66,12 @@
   justify-content: center; /* Center the content inside the subtitle */
   width: 100%; /* Take up the full width to allow even spacing */
   text-align: center;
+  font-family: 'the-macker-gallery-regular', sans-serif;
+  letter-spacing: 6px;
+  margin-bottom: 10px;
 }
 
+/* Apply the custom font to the navigation list */
 nav ul {
   list-style: none;
   padding: 0;
@@ -49,6 +80,7 @@ nav ul {
   flex-wrap: wrap; /* Allow items to wrap onto the next line */
   gap: 40px; /* Increased the gap for better spacing */
   justify-content: center; /* Center items horizontally */
+  font-family: 'ArtshowAltThin', sans-serif; /* Apply the custom font */
 }
 
 nav ul li {
@@ -84,3 +116,4 @@ nav ul li a:hover {
     font-size: 2rem; /* Adjusted size for smaller screens */
   }
 }
+

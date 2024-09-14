@@ -1,3 +1,13 @@
+/* Load BlowBrush font */
+@font-face {
+  font-family: 'BlowBrush';
+  src: url('../../fonts/blowBrush.woff2') format('woff2'),
+       url('../../fonts/blowBrush.woff') format('woff'),
+       url('../../fonts/blowBrush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Ensure unique class names for the store page */
 .store-page {
   text-align: center;
@@ -62,6 +72,19 @@
   opacity: 1;
 }
 
+/* Store title styling */
+.store-title {
+  font-family: 'BlowBrush', sans-serif; /* Apply the custom font */
+  font-size: 4rem; /* Adjust size as needed */
+  color: #333; /* Adjust color as needed */
+  text-align: center;
+  margin: 20px 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out 1s; /* Fade in after the home button animation */
+  letter-spacing: 0.1em;
+}
+
+/* Store header */
 .store-header {
   position: relative;
   width: 100%;

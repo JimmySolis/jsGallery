@@ -1,134 +1,169 @@
+/* Load Artshow Alt Thin font */
+@font-face {
+  font-family: 'Artshow Alt Thin';
+  src: url('../..//fonts/artshow-alt-thin.woff2') format('woff2'),
+       url('../../fonts/artshow-alt-thin.woff') format('woff'),
+       url('../../fonts/artshow-alt-thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Load The Macker Gallery Regular font */
+@font-face {
+  font-family: 'the-macker-gallery-regular';
+  src: url('../../fonts/the-macker-gallery-regular.woff2') format('woff2'),
+       url('../../fonts/the-macker-gallery-regular.woff') format('woff'),
+       url('../../fonts/the-macker-gallery-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Header styling */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 80px;
-    padding: 20px;
-    background-color: #F2F2F2;
-  }
-  
-  .header h1 {
-    margin: 0;
-    font-size: 24px;
-    text-transform: uppercase; /* Convert text to uppercase */
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 20px;
+  background-color: #F2F2F2;
+}
+
+.header h1 {
+  margin: 0;
+  text-transform: uppercase; /* Convert text to uppercase */
+}
+
+/* Product container styling */
+.product-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}
+
+/* Product image styling */
+.product-image {
+  width: 80%;
+  height: 50vh;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.product-name {
+  font-family: 'the-macker-gallery-regular', sans-serif;
+  font-size: calc(5vw + 16px);
+}
+
+.product-price {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: calc(4vw + 8px);
+}
+
+/* Product details styling */
+.product-details {
+  width: 100%;
+  padding: 20px;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Artshow Alt Thin', sans-serif; /* Apply the custom font */
+}
+
+.product-details h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase; /* Ensure product name is uppercase */
+}
+
+.product-details p {
+  font-size: 5vw;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.product-details button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 2.5vw;
+  background-color: #000000;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 1350px) {
   .product-container {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 50px;
   }
-  
+
   .product-image {
-    width: 80%;
-    height: 50vh;
-    padding: 10px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 50%;
+    height: 500px;
+    padding: 150px;
+    background-size: 60%;
+    order: 1;
   }
-  
+
   .product-details {
-    width: 100%;
-    padding: 20px;
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 50%;
+    padding: 40px;
+    order: 2;
   }
-  
+
   .product-details h1 {
-    font-size: 4vw;
-    margin-top: 0;
-    margin-bottom: 20px;
-    text-align: center;
+    text-align: left;
     text-transform: uppercase; /* Ensure product name is uppercase */
   }
-  
+
   .product-details p {
-    font-size: 2.5vw;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: calc(16px + 2vmin);
+    text-align: left;
   }
-  
+
   .product-details button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 2.5vw;
-    background-color: #000000;
-    color: #FFFFFF;
-    border: none;
-    cursor: pointer;
+    font-size: calc(16px + 2vmin);
   }
-  
-  @media (min-width: 1350px) {
-    .product-container {
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .product-image {
-      width: 50%;
-      height: 500px;
-      background-size: 60%;
-      order: 1;
-    }
-  
-    .product-details {
-      width: 50%;
-      padding: 40px;
-      order: 2;
-    }
-  
-    .product-details h1 {
-      font-size: 48px;
-      text-align: left;
-      text-transform: uppercase; /* Ensure product name is uppercase */
-    }
-  
-    .product-details p {
-      font-size: calc(16px + 2vmin);
-      text-align: left;
-    }
-  
-    .product-details button {
-      font-size: calc(16px + 2vmin);
-    }
+}
+
+/* Shake animation */
+.shake {
+  animation: shake 0.3s;
+  animation-iteration-count: 3;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
   }
-  
-  .shake {
-    animation: shake 0.3s;
-    animation-iteration-count: 3;
+  25% {
+    transform: translateX(-5px);
   }
-  
-  @keyframes shake {
-    0% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-5px);
-    }
-    50% {
-      transform: translateX(5px);
-    }
-    75% {
-      transform: translateX(-5px);
-    }
-    100% {
-      transform: translateX(0);
-    }
+  50% {
+    transform: translateX(5px);
   }
-  
-  .error-message {
-    color: red;
+  75% {
+    transform: translateX(-5px);
   }
-  
-  button.shake {
-    animation: shake 0.3s;
-    animation-iteration-count: 3;
+  100% {
+    transform: translateX(0);
   }
-  
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+}
+
+/* Shake animation for buttons */
+button.shake {
+  animation: shake 0.3s;
+  animation-iteration-count: 3;
+}

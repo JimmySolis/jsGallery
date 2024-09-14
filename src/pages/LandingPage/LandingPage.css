@@ -1,36 +1,55 @@
+/* Load The Macker Gallery Regular font */
+@font-face {
+  font-family: 'the-macker-gallery-regular';
+  src: url('../../fonts/the-macker-gallery-regular.woff2') format('woff2'),
+       url('../../fonts/the-macker-gallery-regular.woff') format('woff'),
+       url('../../fonts/the-macker-gallery-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Load BlowBrush font */
+@font-face {
+  font-family: 'BlowBrush';
+  src: url('../../fonts/blowBrush.woff2') format('woff2'),
+       url('../../fonts/blowBrush.woff') format('woff'),
+       url('../../fonts/blowBrush.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
 .landing-page {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #F8F8F8; /* Background color */
-  position: relative; /* For absolute positioning of buttons */
-  overflow: hidden; /* Hide overflowing content */
+  background-color: #F8F8F8;
+  position: relative;
+  overflow: hidden;
+  /* Flex-direction is row by default, which keeps items side by side */
 }
 
 .landing-page .landing-logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* Center the logo */
-  max-width: 80%; /* Large initial size */
+  max-width: 30%;
   height: auto;
-  transition: transform 1.5s ease-in-out; /* Smooth transition */
-}
-
-.landing-page.slide-logo-out .landing-logo {
-  transform: translate(-210%, -50%); /* Move logo out of viewport to the left */
+  transition: transform 1.5s ease-in-out;
 }
 
 .landing-page .navigation-buttons {
-  position: absolute; /* Positioning relative to the parent */
-  right: 10%; /* Distance from the right edge */
-  top: 50%; /* Vertically centered */
-  transform: translateY(-50%); /* Center vertically */
-  display: flex; /* Display buttons in a row */
-  gap: 15px; /* Space between buttons */
+  position: absolute;
+  right: 10%; /* Navigation stays to the right side */
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 15px;
   opacity: 0;
-  transition: opacity 3s ease-in-out; /* Slower fade-in effect */
+  transition: opacity 3s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.landing-page.slide-logo-out .landing-logo {
+  transform: translate(-210%, -50%);
 }
 
 .landing-page .navigation-buttons.fade-in {
@@ -38,11 +57,44 @@
 }
 
 .landing-page .navigation-buttons button {
-  padding: 15px 30px; /* Larger button size */
-  font-size: 18px; /* Larger font size */
+  padding: 15px 30px;
+  font-size: 30px;
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  background: none; /* Remove background styling */
-  color: inherit; /* Inherit text color */
+  background: none;
+  color: inherit;
+  font-family: 'the-macker-gallery-regular', sans-serif;
+}
+
+/* Media query for viewport width 1554px and smaller */
+@media (max-width: 1616px) {
+  .landing-page {
+    flex-direction: column; /* Stack logo and buttons vertically */
+    justify-content: center;
+    align-items: center; /* Center items horizontally */
+  }
+
+  .landing-page .landing-logo {
+    max-width: 80%; /* Adjust the size of the logo */
+    margin-bottom: 50px; /* Space between logo and buttons */
+  }
+
+  .landing-page .navigation-buttons {
+    position: static; /* Reset position to normal flow */
+    top: auto; /* Remove top positioning */
+    right: auto; /* Remove right positioning */
+    transform: none; /* Reset transform */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px; /* Space between buttons */
+    opacity: 1; /* Ensure buttons are visible */
+    transition: none; /* Remove transition for this layout */
+  }
+
+  .landing-page .navigation-buttons button {
+    font-size: 30px; /* Slightly smaller buttons for smaller screens */
+    padding: 10px 20px;
+  }
+
 }

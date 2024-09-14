@@ -74,8 +74,8 @@ const ProductPage = () => {
             style={{ backgroundImage: `url(${product.imageUrl})` }}
           />
           <div className="product-details">
-            <h1>{product.name}</h1>
-            <h2>${product.price}</h2>
+            <h1 className='product-name'>{product.name}</h1>
+            <h2 className='product-price'>${product.price}</h2>
             <p>{product.description}</p>
             <button>Add to Cart</button>
           </div>
