@@ -25,12 +25,17 @@ const ProductPage = () => {
       try {
         const walletDoc = doc(db, "wallet", id);
         const shirtDoc = doc(db, "shirt", id);
+        const phoneDoc = doc(db, "phone", id); // New reference for phone
         
         // Check if the product is in the wallet collection
         let productSnapshot = await getDoc(walletDoc);
         if (!productSnapshot.exists()) {
           // If not found, check the shirt collection
           productSnapshot = await getDoc(shirtDoc);
+        }
+        if (!productSnapshot.exists()) {
+          // If not found, check the phone collection
+          productSnapshot = await getDoc(phoneDoc);
         }
         
         if (productSnapshot.exists()) {
