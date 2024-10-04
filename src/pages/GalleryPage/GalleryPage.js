@@ -15,7 +15,7 @@ function GalleryPage() {
         <ul>
           <li><Link to="/collection/foundation">Foundation</Link></li>
           <li><Link to="/collection/blackout">BlackOut</Link></li>
-          <li><Link to="/collection/blackoutAmPM">Am/Pm</Link></li>
+          <li><Link to="/collection/AmPm">Am/Pm</Link></li>
           <li><Link to="/collection/not-released">Not Released</Link></li>
         </ul>
       </nav>

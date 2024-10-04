@@ -24,9 +24,12 @@ const paintingDetails = {
   salvador: { size: "4x5ft", medium: "Acrylic on Canvas" },
   tauro: { size: "4x5ft", medium: "Acrylic on Canvas" },
   gloria: { size: "4x5ft", medium: "Acrylic on Canvas" },
-  nightbubblé: { size: "4x5ft", medium: "Acrylic on Canvas" },
+  nightbubble: { size: "4x5ft", medium: "Acrylic on Canvas" },
   romeo: { size: "4x5ft", medium: "Acrylic on Canvas" },
-  cochinita: { size: "4x5ft", medium: "Acrylic on Canvas" }
+  cochinita: { size: "4x5ft", medium: "Acrylic on Canvas" },
+  banana: { size: "4x5ft", medium: "Acrylic on Canvas" },
+  cash: { size: "4x5ft", medium: "Acrylic on Canvas" },
+  vhs: { size: "4x5ft", medium: "Acrylic on Canvas" }
 };
 
 const collections = {
@@ -45,8 +48,11 @@ const collections = {
     { webp: 'galleryPhotos/blackout/gloria.webp', png: 'galleryPhotos/blackout/gloria.png' },
     { webp: 'galleryPhotos/blackout/cochinita.webp', png: 'galleryPhotos/blackout/cochinita.png' }
   ],
-  blackoutAmPM: [
-    { webp: 'galleryPhotos/blackout/night-Bubblé.webp', png: 'galleryPhotos/blackout/night-Bubblé.png' },
+  AmPm: [
+    { webp: 'galleryPhotos/ampm/night-bubble.webp', png: 'galleryPhotos/ampm/night-bubble.png' },
+    { webp: 'galleryPhotos/ampm/Banana.webp', png: 'galleryPhotos/ampm/galleryPhotos/ampm/Banana.png' },
+    { webp: 'galleryPhotos/ampm/Cash.webp', png: 'galleryPhotos/ampm/Cash.png' },
+    { webp: 'galleryPhotos/ampm/VHS.webp', png: 'galleryPhotos/ampm/VHS.png' },
   ],
   'not-released': [],
 };
