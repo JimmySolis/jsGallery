@@ -36,7 +36,7 @@ function LandingPage() {
       <div className={`navigation-buttons ${fadeIn ? 'fade-in' : ''}`}>
         <button onClick={() => handleNavigation('/gallery')} className='gallery-font'>Gallery</button>
         <button onClick={() => handleNavigation('/store')} className='store-font'>Store</button>
-        <button onClick={() => handleNavigation('/prints')}>Prints</button>
+        <button onClick={() => handleNavigation('/contact')}>Contact</button>
       </div>
     </div>
   );
