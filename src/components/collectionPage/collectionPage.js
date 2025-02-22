@@ -21,15 +21,19 @@ const paintingDetails = {
   paranoia: { size: "4x5ft", medium: "Oil on Canvas" },
   elegant: { size: "4x5ft", medium: "Acrylic on Canvas" },
   meditation: { size: "4x5ft", medium: "Acrylic on Canvas" },
+  tino: { size: "4x5ft", medium: "Acrylic on Canvas" },
   salvador: { size: "4x5ft", medium: "Acrylic on Canvas" },
-  tauro: { size: "4x5ft", medium: "Acrylic on Canvas" },
   gloria: { size: "4x5ft", medium: "Acrylic on Canvas" },
   nightbubble: { size: "4x5ft", medium: "Acrylic on Canvas" },
   romeo: { size: "4x5ft", medium: "Acrylic on Canvas" },
   cochinita: { size: "4x5ft", medium: "Acrylic on Canvas" },
   banana: { size: "4x5ft", medium: "Acrylic on Canvas" },
   cash: { size: "4x5ft", medium: "Acrylic on Canvas" },
-  vhs: { size: "4x5ft", medium: "Acrylic on Canvas" }
+  vhs: { size: "4x5ft", medium: "Acrylic on Canvas" },
+  ebony: { size: "3x4ft", medium: "Acrylic on Canvas"},
+  ivory: { size: "3x4ft", medium: "Acrylic on Canvas"},
+  fighter: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" },
+  workinToTheBone: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" }
 };
 
 const collections = {
@@ -43,8 +47,8 @@ const collections = {
     { webp: 'galleryPhotos/blackout/romeo.webp', png: 'galleryPhotos/blackout/romeo.png' },
     { webp: 'galleryPhotos/blackout/elegant.webp', png: 'galleryPhotos/blackout/elegant.png' },
     { webp: 'galleryPhotos/blackout/meditation.webp', png: 'galleryPhotos/blackout/meditation.png' },
-    { webp: 'galleryPhotos/blackout/salvador.webp', png: 'galleryPhotos/blackout/salvador.png' },
-    { webp: 'galleryPhotos/blackout/tauro.webp', png: 'galleryPhotos/blackout/tauro.png'},
+    { webp: 'galleryPhotos/blackout/tino.webp', png: 'galleryPhotos/blackout/tino.png' },
+    { webp: 'galleryPhotos/blackout/salvador.webp', png: 'galleryPhotos/blackout/salvador.png'},
     { webp: 'galleryPhotos/blackout/gloria.webp', png: 'galleryPhotos/blackout/gloria.png' },
     { webp: 'galleryPhotos/blackout/cochinita.webp', png: 'galleryPhotos/blackout/cochinita.png' }
   ],
@@ -54,7 +58,15 @@ const collections = {
     { webp: 'galleryPhotos/ampm/Cash.webp', png: 'galleryPhotos/ampm/Cash.png' },
     { webp: 'galleryPhotos/ampm/VHS.webp', png: 'galleryPhotos/ampm/VHS.png' },
   ],
-  'not-released': [],
+  solos:[
+    { webp: 'galleryPhotos/solos/ivory.webp', png: 'galleryPhotos/solos/ivory.png' },
+    { webp: 'galleryPhotos/solos/ebony.webp', png: 'galleryPhotos/solos/ebony.png' }
+  ],
+  humanBolders:[
+    { webp: 'galleryPhotos/humanBolders/fighter.webp', png: 'galleryPhotos/humanBolders/fighter.png' },
+    { webp: 'galleryPhotos/humanBolders/workinToTheBone.webp', png: 'galleryPhotos/humanBolders/workinToTheBone.png' }
+
+  ]
 };
 
 function CollectionPage() {

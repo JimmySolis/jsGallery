@@ -3,10 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import { db, storage } from "../../firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { getDownloadURL, ref } from "firebase/storage";
+import { useCart } from '../cartContext/cartContext.js';
 import './productPage.css';
 
-// Import your PNG image
-import homeButtonImage from '../../assets/logo/skull.PNG'; // Adjust the path
+import homeButtonImage from '../../assets/logo/skull.PNG';
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -14,75 +14,91 @@ const ProductPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
+  const { addToCart } = useCart();
 
   useEffect(() => {
-    // Simulate the delay for the homepage button to appear
     setTimeout(() => {
       setShowLoading(true);
-    }, 500); // Adjust the delay as needed
+    }, 500);
 
     const fetchProduct = async () => {
       try {
-        const walletDoc = doc(db, "wallet", id);
-        const shirtDoc = doc(db, "shirt", id);
-        const phoneDoc = doc(db, "phone", id); // New reference for phone
-        
-        // Check if the product is in the wallet collection
-        let productSnapshot = await getDoc(walletDoc);
-        if (!productSnapshot.exists()) {
-          // If not found, check the shirt collection
-          productSnapshot = await getDoc(shirtDoc);
+        // Attempt to retrieve the product from various collections
+        const collections = ["wallet", "shirt", "phone"];
+        let productSnapshot = null;
+
+        for (const collection of collections) {
+          const docRef = doc(db, collection, id);
+          const snapshot = await getDoc(docRef);
+          if (snapshot.exists()) {
+            productSnapshot = snapshot;
+            break;
+          }
         }
-        if (!productSnapshot.exists()) {
-          // If not found, check the phone collection
-          productSnapshot = await getDoc(phoneDoc);
-        }
-        
-        if (productSnapshot.exists()) {
+
+        if (productSnapshot) {
           const data = productSnapshot.data();
           const imageUrl = await getDownloadURL(ref(storage, data.image));
-          setProduct({ ...data, imageUrl });
+
+          setProduct({
+            ...data,
+            imageUrl,
+            isReserved: data.status === 'in someone cart...',
+            isSold: data.status === 'sold',
+          });
+          setShowContent(true);
         } else {
           console.error("No such product!");
         }
-        setShowContent(true); // Trigger content visibility after data fetch
       } catch (error) {
         console.error("Error fetching product:", error);
       } finally {
-        setIsLoading(false); // Set loading to false after fetching data
+        setIsLoading(false);
       }
     };
 
     fetchProduct();
   }, [id]);
 
+  const handleAddToCart = () => {
+    if (product) {
+      if (product.isSold) {
+        alert("This product is already sold and unavailable.");
+      } else if (product.isReserved) {
+        alert("In someone else's cart. Hurry before they buy it!");
+      } else {
+        addToCart(product);
+        alert(`${product.name} added to cart!`);
+      }
+    }
+  };
+
   return (
     <div className="product-page">
-      {/* Header */}
       <header className="header">
-        <Link to="/store" className="home-button"> {/* Link to store page */}
+        <Link to="/store" className="home-button">
           <img src={homeButtonImage} alt="Home" />
         </Link>
-        <h1>{'Product Details'}</h1>
+        <h1>Product Details</h1>
       </header>
-      
-      {/* Loading Message */}
-      {showLoading && isLoading && (
-        <div className="loading">Loading...</div>
-      )}
-      
-      {/* Product Details */}
+
+      {showLoading && isLoading && <div className="loading">Loading...</div>}
+
       {!isLoading && product && (
         <div className="product-container">
-          <div
-            className="product-image"
-            style={{ backgroundImage: `url(${product.imageUrl})` }}
-          />
+          <div className="product-image" style={{ backgroundImage: `url(${product.imageUrl})` }} />
           <div className="product-details">
-            <h1 className='product-name'>{product.name}</h1>
-            <h2 className='product-price'>${product.price}</h2>
+            <h1 className="product-name">{product.name}</h1>
+            <h2 className="product-price">${product.price}</h2>
             <p>{product.description}</p>
-            <button>Add to Cart</button>
+
+            {product.isSold ? (
+              <p className="sold-out">Sold Out</p>
+            ) : (
+              <button onClick={handleAddToCart} disabled={product.isReserved}>
+                {product.isReserved ? "In someone else's cart. Hurry before they buy it!" : "Add to Cart"}
+              </button>
+            )}
           </div>
         </div>
       )}

@@ -1,0 +1,52 @@
+/* Main container styling */
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f8f8f8;
+    overflow: hidden;
+  }
+  
+  /* Scattered text styling */
+  .scattered-text {
+    position: absolute;
+    font-family: Arial, sans-serif;
+    font-size: 48px; /* Larger text size */
+    color: #333;
+    white-space: nowrap;
+    transform: translate(-50%, -50%); /* Centers text at random position */
+    animation: float 6s infinite ease-in-out;
+    opacity: 0.6;
+  }
+  
+  /* Floating animation for dynamic effect */
+  @keyframes float {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+  
+  /* Button styling */
+  .back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Keeps button above the text */
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  

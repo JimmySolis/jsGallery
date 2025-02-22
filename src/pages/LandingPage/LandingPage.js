@@ -35,7 +35,7 @@ function LandingPage() {
       />
       <div className={`navigation-buttons ${fadeIn ? 'fade-in' : ''}`}>
         <button onClick={() => handleNavigation('/gallery')} className='gallery-font'>Gallery</button>
-        <button onClick={() => handleNavigation('/store')} className='store-font'>Store</button>
+        {/* <button onClick={() => handleNavigation('/store')} className='store-font'>Store</button> */}
         <button onClick={() => handleNavigation('/contact')}>Contact</button>
       </div>
     </div>
@@ -43,3 +43,6 @@ function LandingPage() {
 }
 
 export default LandingPage;
+
+
+// last you momo 3) make sure you undo the  button here to see the shop button. You momo.

@@ -1,0 +1,112 @@
+.all-art-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #F8F8F8;
+  }
+  
+  .loading-container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .loading-bar {
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .loading-bar.low {
+    background-color: red;
+  }
+  
+  .loading-bar.medium {
+    background-color: blue;
+  }
+  
+  .loading-bar.high {
+    background-color: #c68e17;
+  }
+  
+  .cloud-toggle-button {
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(145deg, #ffffff, #e5e5e5);
+    border: 2px solid #ddd;
+    border-radius: 50px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 -8px 16px rgba(255, 255, 255, 0.4);
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.4s ease;
+  }
+  
+  .cloud-toggle-button a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .cloud-toggle-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 -10px 20px rgba(255, 255, 255, 0.5);
+    background: linear-gradient(145deg, #e0e0e0, #ffffff);
+  }
+  
+  .cloud-toggle-button:active {
+    background: #c5c5c5;
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .art-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .art-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .art-image:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .art-grid {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+    }
+  
+    .title {
+      font-size: 2rem;
+    }
+  }
+  

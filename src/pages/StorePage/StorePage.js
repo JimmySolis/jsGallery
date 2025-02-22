@@ -64,7 +64,7 @@ const StorePage = () => {
         const walletsList = await Promise.all(walletsSnapshot.docs.map(async doc => {
           const data = doc.data();
           const imageUrl = await getDownloadURL(ref(storage, data.image));
-          return { id: doc.id, ...data, imageUrl };
+          return { id: doc.id, customId: data.customId, ...data, imageUrl }; // Include customId
         }));
         setWallets(walletsList);
 
@@ -73,7 +73,7 @@ const StorePage = () => {
         const shirtsList = await Promise.all(shirtsSnapshot.docs.map(async doc => {
           const data = doc.data();
           const imageUrl = await getDownloadURL(ref(storage, data.image));
-          return { id: doc.id, ...data, imageUrl };
+          return { id: doc.id, customId: data.customId, ...data, imageUrl }; // Include customId
         }));
         setShirts(shirtsList);
 
@@ -82,7 +82,7 @@ const StorePage = () => {
         const phonesList = await Promise.all(phonesSnapshot.docs.map(async doc => {
           const data = doc.data();
           const imageUrl = await getDownloadURL(ref(storage, data.image));
-          return { id: doc.id, ...data, imageUrl };
+          return { id: doc.id, customId: data.customId, ...data, imageUrl }; // Include customId
         }));
         setPhones(phonesList);
 
@@ -129,18 +129,22 @@ const StorePage = () => {
             {wallets.map(wallet => (
               <Link to={`/product/${wallet.id}`} key={wallet.id} className="product-card">
                 <img src={wallet.imageUrl} alt={wallet.name} />
+                {/* You can access customId if needed */}
+                {/* Example: <p>Custom ID: {wallet.customId}</p> */}
               </Link>
             ))}
 
             {shirts.map(shirt => (
               <Link to={`/product/${shirt.id}`} key={shirt.id} className="product-card">
                 <img src={shirt.imageUrl} alt={shirt.name} />
+                {/* Example: <p>Custom ID: {shirt.customId}</p> */}
               </Link>
             ))}
 
             {phones.map(phone => (
               <Link to={`/product/${phone.id}`} key={phone.id} className="product-card">
                 <img src={phone.imageUrl} alt={phone.name} />
+                {/* Example: <p>Custom ID: {phone.customId}</p> */}
               </Link>
             ))}
           </div>

@@ -1,0 +1,93 @@
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center header and cart items */
+  justify-content: center;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px; /* Space below the header */
+}
+
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the cart items */
+  width: 100%; /* Full width for centering */
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column; /* Stack cart items vertically */
+  align-items: center; /* Center cart items */
+  width: 100%; /* Allow items to take full width */
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin: 20px; /* Space between items */
+  padding: 3vh 3vw; /* Reduced padding for smaller items */
+  border: 2px solid #ccc; /* Optional: add border for better visibility */
+  border-radius: 12px; /* Optional: rounded corners */
+  width: 90%; /* Slightly larger width for items */
+  max-width: 600px; /* Reduced maximum width */
+  background-color: #f9f9f9; /* Optional: item background color */
+  transition: transform 0.2s ease; /* Smooth scaling on hover */
+}
+
+.cart-item:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.cart-item-image {
+  width: 20vw; /* Reduced width for images */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 200px; /* Reduced maximum width for larger screens */
+  max-height: 200px; /* Reduced maximum height for larger screens */
+  margin-right: 15px; /* Space between image and details */
+}
+
+.cart-item-details {
+  display: flex;
+  flex-direction: column; /* Stack name and price */
+}
+
+.cart-item-details h2 {
+  font-size: 2.6vw; /* Reduced name size relative to viewport width */
+  margin: 0; /* Remove default margin */
+}
+
+.cart-item-details p {
+  font-size: 2.4vw; /* Reduced price size relative to viewport width */
+  margin: 5px 0; /* Margin above and below */
+}
+
+.cart-item button {
+  margin-top: 15px; /* Space above button */
+  padding: 1.5vh 2vw; /* Reduced button padding in viewport units */
+  font-size: 2.4vw; /* Reduced button text size relative to viewport width */
+}
+
+/* Media Queries for smaller viewports */
+@media (max-width: 600px) {
+  .cart-item-image {
+    width: 30vw; /* Increase image size for smaller viewports */
+    max-width: 150px; /* Cap the maximum width */
+  }
+
+  .cart-item-details h2 {
+    font-size: 4.5vw; /* Increase name size for smaller viewports */
+  }
+
+  .cart-item-details p {
+    font-size: 4vw; /* Increase price size for smaller viewports */
+  }
+
+  .cart-item button {
+    font-size: 4vw; /* Increase button text size for smaller viewports */
+  }
+}

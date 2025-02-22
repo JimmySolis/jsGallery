@@ -1,0 +1,152 @@
+/* Font Imports */
+@font-face {
+  font-family: 'the-macker-gallery-regular';
+  src: url('../../fonts/the-macker-gallery-regular.woff2') format('woff2'),
+       url('../../fonts/the-macker-gallery-regular.woff') format('woff'),
+       url('../../fonts/the-macker-gallery-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ArtshowAltThin';
+  src: url('../../fonts/artshow-alt-thin.woff2') format('woff2'),
+       url('../../fonts/artshow-alt-thin.woff') format('woff'),
+       url('../../fonts/artshow-alt-thin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* General Layout */
+.gallery-page { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  background: #F8F8F8;
+}
+
+/* Title Section */
+.title {
+  font-weight: bold;
+  color: #333;
+  font-family: 'the-macker-gallery-regular', sans-serif;
+  letter-spacing: 4px;
+  margin-bottom: 15px; /* Reduced for cleaner spacing */
+}
+
+.title-link {
+  font-size: 5.5rem;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.title-link:hover {
+  color: #007BFF;
+  text-decoration: underline;
+}
+
+/* Subtitle Styling */
+.subTitle {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+  text-align: center;
+  font-family: 'the-macker-gallery-regular', sans-serif;
+  letter-spacing: 4px;
+  margin-bottom: 20px; /* Adjusted for better spacing */
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px; /* Adjusted for balanced spacing */
+  justify-content: center;
+  font-family: 'ArtshowAltThin', sans-serif;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 2.8rem;
+  color: #000;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #007BFF;
+}
+
+/* Cloud Button Styling */
+.cloud-toggle-button {
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  padding: 15px 40px;
+  background: linear-gradient(145deg, #ffffff, #e5e5e5);
+  border: 2px solid #ddd;
+  border-radius: 50px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 -8px 16px rgba(255, 255, 255, 0.4);
+  color: #333;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.4s ease;
+}
+
+.cloud-toggle-button a {
+  color: #333;
+  text-decoration: none;
+}
+
+.cloud-toggle-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 -10px 20px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(145deg, #e0e0e0, #ffffff);
+}
+
+.cloud-toggle-button:active {
+  background: #c5c5c5;
+  transform: translateY(2px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 4rem;
+  }
+
+  .title-link {
+    font-size: 4.5rem;
+  }
+
+  .subTitle {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul li a {
+    font-size: 2.2rem;
+  }
+}
