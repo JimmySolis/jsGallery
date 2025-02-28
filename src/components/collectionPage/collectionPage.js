@@ -33,7 +33,8 @@ const paintingDetails = {
   ebony: { size: "3x4ft", medium: "Acrylic on Canvas"},
   ivory: { size: "3x4ft", medium: "Acrylic on Canvas"},
   fighter: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" },
-  workinToTheBone: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" }
+  workinToTheBone: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" },
+  frankenhulk: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" }
 };
 
 const collections = {
@@ -64,7 +65,8 @@ const collections = {
   ],
   humanBolders:[
     { webp: 'galleryPhotos/humanBolders/fighter.webp', png: 'galleryPhotos/humanBolders/fighter.png' },
-    { webp: 'galleryPhotos/humanBolders/workinToTheBone.webp', png: 'galleryPhotos/humanBolders/workinToTheBone.png' }
+    { webp: 'galleryPhotos/humanBolders/workinToTheBone.webp', png: 'galleryPhotos/humanBolders/workinToTheBone.png' },
+    { webp: 'galleryPhotos/humanBolders/frankenHulk.webp', png: 'galleryPhotos/humanBolders/frankenHulk.png' }
 
   ]
 };
