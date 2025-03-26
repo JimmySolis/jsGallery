@@ -69,8 +69,8 @@ const collections = {
     { webp: 'galleryPhotos/humanBolders/fighter.webp', png: 'galleryPhotos/humanBolders/fighter.png' },
     { webp: 'galleryPhotos/humanBolders/workinToTheBone.webp', png: 'galleryPhotos/humanBolders/workinToTheBone.png' },
     { webp: 'galleryPhotos/humanBolders/frankenHulk.webp', png: 'galleryPhotos/humanBolders/frankenHulk.png' },
+    { webp: 'galleryPhotos/humanBolders/enlightenment.webp', png: 'galleryPhotos/humanBolders/enlightenment.png' }, 
     { webp: 'galleryPhotos/humanBolders/guygantuan.webp', png: 'galleryPhotos/humanBolders/guygantuan.png' }
-
   ]
 };
 
