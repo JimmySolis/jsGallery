@@ -36,7 +36,8 @@ const paintingDetails = {
   workinToTheBone: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" },
   frankenhulk: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" },
   enlightenment: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" },
-  guygantuan: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" }
+  guygantuan: {size: "4x5ft", medium: "Acrylic & Markers on Canvas" },
+  fighterII: {size: "4x5ft", medium: "Acrylic & Markers on Canvas"}
 };
 
 const collections = {
@@ -70,7 +71,8 @@ const collections = {
     { webp: 'galleryPhotos/humanBolders/workinToTheBone.webp', png: 'galleryPhotos/humanBolders/workinToTheBone.png' },
     { webp: 'galleryPhotos/humanBolders/frankenHulk.webp', png: 'galleryPhotos/humanBolders/frankenHulk.png' },
     { webp: 'galleryPhotos/humanBolders/enlightenment.webp', png: 'galleryPhotos/humanBolders/enlightenment.png' }, 
-    { webp: 'galleryPhotos/humanBolders/guygantuan.webp', png: 'galleryPhotos/humanBolders/guygantuan.png' }
+    { webp: 'galleryPhotos/humanBolders/guygantuan.webp', png: 'galleryPhotos/humanBolders/guygantuan.png' },
+     { webp: 'galleryPhotos/humanBolders/fighterII.webp', png: 'galleryPhotos/humanBolders/fighterII.png' }
   ]
 };
 

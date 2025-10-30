@@ -7,11 +7,7 @@ function GalleryPage() {
 
   return (
     <div className="gallery-page">
-      <button className="cloud-toggle-button">
-        <Link to={isAllArtPage ? "/gallery" : "/all-art"}>
-          {isAllArtPage ? "Back to Collections" : "View All Art"}
-        </Link>
-      </button>
+      
       <h1 className="title">
         <Link to="/" className="title-link">
           Jimmy Solis
@@ -27,6 +23,11 @@ function GalleryPage() {
           <li><Link to="/collection/solos">Solos</Link></li>
         </ul>
       </nav>
+      <button className="cloud-toggle-button">
+        <Link to={isAllArtPage ? "/gallery" : "/all-art"}>
+          {isAllArtPage ? "Back to Collections" : "View All Art"}
+        </Link>
+      </button>
     </div>
   );
 }

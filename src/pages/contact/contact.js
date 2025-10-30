@@ -8,7 +8,7 @@ const Contact = () => {
 
   useEffect(() => {
     const generatePositions = () => {
-      const numElements = 100; // Increase the number of replications
+      const numElements = 1; // Increase the number of replications
       const newPositions = [];
 
       for (let i = 0; i < numElements; i++) {
